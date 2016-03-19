@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15C50" minimumToolsVersion="Xcode 7.0">
+    <entity name="Detail" representedClassName="Detail" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="row" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="progress" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Progress" inverseName="details" inverseEntity="Progress" syncable="YES"/>
+    </entity>
+    <entity name="Maxdetail" representedClassName="Maxdetail" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="row" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="maxprogress" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Maxprogress" inverseName="maxdetails" inverseEntity="Maxprogress" syncable="YES"/>
+    </entity>
+    <entity name="Maxprogress" representedClassName="Maxprogress" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="maxdetails" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Maxdetail" inverseName="maxprogress" inverseEntity="Maxdetail" syncable="YES"/>
+    </entity>
+    <entity name="Progress" representedClassName="Progress" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="details" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Detail" inverseName="progress" inverseEntity="Detail" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Detail" positionX="-54" positionY="9" width="128" height="88"/>
+        <element name="Progress" positionX="-380" positionY="33" width="128" height="90"/>
+        <element name="Maxprogress" positionX="-398" positionY="222" width="128" height="88"/>
+        <element name="Maxdetail" positionX="-119" positionY="240" width="128" height="88"/>
+    </elements>
+</model>
